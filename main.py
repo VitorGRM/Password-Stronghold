@@ -75,14 +75,14 @@ def GeneratePassword(password_data_base):
     print()
     print("Smart passwords generator:")
     print()
-    print("\t Fist shape:")
+    print("\t First shape:")
     options = 0
     #this loop will create 10 password randomly created under a defined shape
     while options < 10:
         selected_sign = secrets.choice(password_data_base[2][0:32])
         random_names = random.sample(password_data_base[0][0:], 2)
         smart_password1 = [selected_sign, random_names[0], secrets.choice(password_data_base[1][0:]), random_names[1], selected_sign]
-        #now it is time to conver the smart_password list into a string
+        #now it is time to convert the smart_password list into a string
         smart_password1_str = ""
         listel = 0
         for i in smart_password1:
@@ -112,7 +112,7 @@ def GeneratePassword(password_data_base):
         strenght, improvment = passwordmeter.test(smart_password)
         print(smart_password + "\t This password is " + str(int(strenght*100)) + "% strong")
         options += 1
-    retry  = input("Would like to randomize the passwords with sameinformations? Type Y to restart the randomiezer")
+    retry  = input("Would you like to randomize the passwords with same information? Type Y to restart the randomiezer")
     retry = retry.upper()
     if retry == "Y":
         GeneratePassword(password_data_base)
